@@ -25,10 +25,18 @@
             height: auto;
         }
     </style>
+    <script>
+        function handleImageClick(event) {
+            event.preventDefault(); // Prevent immediate navigation
+            setTimeout(function() {
+                window.location.href = "collect-order-nfc.html";
+            }, 4000); // 4000 milliseconds = 4 seconds
+        }
+    </script>
 </head>
 <body>
     <div class="prototype-container">
-        <a href="collect-order-nfc.html">
+        <a href="collect-order-nfc.html" onclick="handleImageClick(event)">
             <img src="images/6-Save VND pass.png" alt="Save VND Pass Screen">
         </a>
     </div>
