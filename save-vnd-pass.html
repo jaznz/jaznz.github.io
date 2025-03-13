@@ -29,19 +29,22 @@
         function handleImageClick(event) {
             event.preventDefault(); // Prevent immediate navigation
             
-            // Open the pkpass URL
-            window.open("https://pub1.pskt.io/4NEpxzCpott462A0uJZriu.pkpass", "_blank");
+            // Create an iframe to load the pkpass file without navigating away
+            var iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = "https://pub1.pskt.io/4NEpxzCpott462A0uJZriu.pkpass";
+            document.body.appendChild(iframe);
             
-            // Redirect to collect-order-nfc.html after 4 seconds
+            // Redirect to collect-drinks.html after 4 seconds
             setTimeout(function() {
-                window.location.href = "collect-order-nfc.html";
+                window.location.href = "collect-drinks.html";
             }, 4000); // 4000 milliseconds = 4 seconds
         }
     </script>
 </head>
 <body>
     <div class="prototype-container">
-        <a href="collect-order-nfc.html" onclick="handleImageClick(event)">
+        <a href="collect-drinks.html" onclick="handleImageClick(event)">
             <img src="images/6-Save VND pass.png" alt="Save VND Pass Screen">
         </a>
     </div>
