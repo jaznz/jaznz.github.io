@@ -19,18 +19,28 @@
             width: 375px;
             margin: 0;
             text-align: center;
+            position: relative;
         }
         img {
             max-width: 100%;
             height: auto;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 24px;
+            height: 24px;
+            z-index: 10;
         }
     </style>
 </head>
 <body>
     <div class="prototype-container">
         <a href="payment-method.html">
-            <img src="images/3-Sign in.png" alt="Sign-in Screen">
+            <img src="images/3-Sign in.png" alt="Sign In Screen">
         </a>
+        <a href="order-drinks.html" class="back-button" title="Back to Order Drinks"></a>
     </div>
 </body>
 </html> 

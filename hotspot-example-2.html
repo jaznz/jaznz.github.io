@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hotspot Example 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .prototype-container {
+            max-width: 100%;
+            width: 375px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative; /* Important for absolute positioning of hotspots */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Removes any extra space below the image */
+        }
+        .hotspot {
+            position: absolute;
+            background-color: rgba(255, 0, 0, 0.3); /* Semi-transparent red for visibility */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        /* For production, you might want to make hotspots invisible */
+        .hotspot.invisible {
+            background-color: transparent;
+        }
+        .hotspot:hover {
+            background-color: rgba(255, 0, 0, 0.5); /* Darker red on hover */
+        }
+        /* Specific hotspot positions and sizes */
+        #hotspot1 {
+            left: 50px;
+            top: 100px;
+            width: 100px;
+            height: 50px;
+        }
+        #hotspot2 {
+            right: 50px;
+            top: 150px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* Makes it circular */
+        }
+        #hotspot3 {
+            left: 150px;
+            bottom: 100px;
+            width: 120px;
+            height: 40px;
+        }
+    </style>
+    <script>
+        function handleHotspotClick(destination) {
+            // You can add any logic here before navigation
+            console.log("Hotspot clicked, navigating to: " + destination);
+            window.location.href = destination;
+        }
+        
+        function showTooltip(id, message) {
+            alert(message); // Simple alert for demo, could be replaced with custom tooltip
+        }
+    </script>
+</head>
+<body>
+    <div class="prototype-container">
+        <!-- The main image -->
+        <img src="images/6-Save VND pass.png" alt="Example Image">
+        
+        <!-- Hotspot areas as divs positioned over the image -->
+        <div id="hotspot1" class="hotspot" 
+             onclick="handleHotspotClick('collect-drinks.html')"></div>
+             
+        <div id="hotspot2" class="hotspot" 
+             onclick="showTooltip('hotspot2', 'This is hotspot 2')"></div>
+             
+        <div id="hotspot3" class="hotspot" 
+             onclick="handleHotspotClick('#')"></div>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <p>This example shows three hotspots using positioned divs:</p>
+        <ul>
+            <li>Red Rectangle (top left): Links to collect-drinks.html</li>
+            <li>Red Circle (top right): Shows an alert</li>
+            <li>Red Rectangle (bottom): Does nothing yet</li>
+        </ul>
+        <p>For production use, add the 'invisible' class to make hotspots transparent.</p>
+        <button onclick="document.querySelectorAll('.hotspot').forEach(h => h.classList.toggle('invisible'))">
+            Toggle Hotspot Visibility
+        </button>
+    </div>
+</body>
+</html> 

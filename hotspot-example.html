@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hotspot Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .prototype-container {
+            max-width: 100%;
+            width: 375px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Optional: Add visual feedback when hovering over hotspots */
+        area:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="prototype-container">
+        <!-- Image with map attribute referencing the map name -->
+        <img src="images/6-Save VND pass.png" alt="Example Image" usemap="#image-map">
+
+        <!-- Define the image map with hotspots -->
+        <map name="image-map">
+            <!-- Rectangular hotspot: coords="left, top, right, bottom" -->
+            <area shape="rect" coords="50,100,150,150" href="collect-drinks.html" alt="Button 1">
+            
+            <!-- Circular hotspot: coords="centerX, centerY, radius" -->
+            <area shape="circle" coords="200,200,30" href="#" 
+                  onclick="alert('Circular hotspot clicked!'); return false;" alt="Button 2">
+            
+            <!-- Polygon hotspot: coords="x1,y1,x2,y2,x3,y3,..." -->
+            <area shape="poly" coords="250,300,300,320,280,350,240,340" href="#" 
+                  onclick="alert('Polygon area clicked!'); return false;" alt="Button 3">
+        </map>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <p>This example shows three types of hotspots:</p>
+        <ul>
+            <li>Rectangle: Links to collect-drinks.html</li>
+            <li>Circle: Shows an alert</li>
+            <li>Polygon: Shows an alert</li>
+        </ul>
+        <p>Note: You'll need to adjust the coordinates to match your specific image.</p>
+    </div>
+</body>
+</html> 

@@ -19,10 +19,19 @@
             width: 375px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
         }
         img {
             max-width: 100%;
             height: auto;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 24px;
+            height: 24px;
+            z-index: 10;
         }
     </style>
 </head>
@@ -31,6 +40,7 @@
         <a href="order-drinks.html">
             <img src="images/1-First time user - landing screen.png" alt="Landing Screen">
         </a>
+        <!-- No back button on the first page (index.html) as it's the starting point -->
     </div>
 </body>
 </html> 

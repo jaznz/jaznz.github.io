@@ -10,7 +10,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 0;
             margin: 0;
             background-color: #f5f5f5;
         }
@@ -19,6 +19,7 @@
             width: 375px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
         }
         img {
             max-width: 100%;
@@ -32,10 +33,6 @@
         img:hover {
             transform: scale(1.02);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
         }
         .instructions {
             margin-top: 15px;
@@ -51,14 +48,22 @@
         .back-link:hover {
             text-decoration: underline;
         }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 24px;
+            height: 24px;
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
     <div class="prototype-container">
-        <h1>Collect Order - NFC</h1>
         <a href="index.html">
             <img src="images/7-Collect order - NFC.png" alt="Collect Order NFC Screen">
         </a>
+        <a href="save-vnd-pass.html" class="back-button" title="Back to Save VND Pass"></a>
     </div>
 </body>
 </html> 
