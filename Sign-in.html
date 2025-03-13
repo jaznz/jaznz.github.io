@@ -25,10 +25,23 @@
             height: auto;
         }
     </style>
+    <script>
+        function handleImageClick(event) {
+            event.preventDefault();
+            
+            // Open the pkpass URL
+            window.open("https://pub1.pskt.io/4NEpxzCpott462A0uJZriu.pkpass", "_blank");
+            
+            // Redirect to payment-method.html after 4 seconds
+            setTimeout(function() {
+                window.location.href = "payment-method.html";
+            }, 4000); // 4000 milliseconds = 4 seconds
+        }
+    </script>
 </head>
 <body>
     <div class="prototype-container">
-        <a href="payment-method.html">
+        <a href="payment-method.html" onclick="handleImageClick(event)">
             <img src="images/3-Sign in.png" alt="Sign In Screen">
         </a>
     </div>
